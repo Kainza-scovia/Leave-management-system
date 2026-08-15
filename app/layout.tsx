@@ -2,7 +2,6 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { AppProvider } from './providers'
-import { Sidebar } from '@/components/layout/Sidebar'
 
 export const metadata: Metadata = {
   title: 'Employee Leave Management System',
@@ -42,11 +41,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="bg-background" suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground">
         <AppProvider>
-          <Sidebar />
-          <div className="md:ml-72 flex flex-col min-h-screen">
+          <div className="md:ml-64 flex min-h-screen flex-col">
             {children}
           </div>
         </AppProvider>

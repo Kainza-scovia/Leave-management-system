@@ -31,17 +31,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     // Initialize mock data
     initializeMockData();
 
-    // Get or create current user
-    let user = getCurrentUser();
-    if (!user) {
-      const employees = getEmployees();
-      const users = getMockUsers(employees);
-      if (users.length > 0) {
-        user = users[0];
-        setCurrentUser(user);
-      }
-    }
-
+    // Restore an existing session; unauthenticated visitors are sent to login.
+    const user = getCurrentUser();
     if (user) {
       setCurrentUserState(user);
     }
@@ -55,6 +46,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     const darkMode = localStorage.getItem('theme') === 'dark';
     setIsDarkMode(darkMode);
     document.documentElement.classList.toggle('dark', darkMode);
+    document.documentElement.classList.toggle('light', !darkMode);
 
     setIsLoading(false);
   }, []);

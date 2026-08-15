@@ -58,7 +58,7 @@ export default function ManagerDashboard() {
       <div className="flex-1 flex flex-col">
         <Topbar />
         <main className="flex-1 overflow-auto">
-          <div className="p-4 md:p-6 space-y-6">
+          <div className="flex flex-col gap-6 p-4 md:p-6">
             <div>
               <h1 className="text-3xl font-bold">Manager Dashboard</h1>
               <p className="text-muted-foreground">Manage your team's leave requests</p>

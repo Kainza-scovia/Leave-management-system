@@ -10,8 +10,13 @@ export default function Home() {
   const { currentUser, isLoading } = useAppContext();
 
   useEffect(() => {
+    if (!isLoading && !currentUser) {
+      router.replace('/login');
+      return;
+    }
+
     if (!isLoading && currentUser) {
-      // Redirect to appropriate dashboard based on role
+      // Redirect to the appropriate workspace based on role.
       if (currentUser.role === 'EMPLOYEE') {
         router.push('/employee/dashboard');
       } else if (currentUser.role === 'MANAGER') {
