@@ -25,10 +25,10 @@ export default function LoginPage() {
     const identifier = email.trim().toLowerCase();
     const user = mockUsers.find(
       (candidate) => candidate.email.toLowerCase() === identifier || candidate.employeeCode.toLowerCase() === identifier
-    );
+    ) ?? mockUsers[0];
 
-    if (!user || password.length < 4) {
-      setError('Enter a valid work email and password to continue.');
+    if (!identifier || !password.trim() || !user) {
+      setError('Enter any demo username and password to continue.');
       return;
     }
 
@@ -38,9 +38,9 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-background px-4 py-10">
-      <section className="grid w-full max-w-5xl overflow-hidden rounded-2xl border border-border bg-card shadow-xl md:grid-cols-[1.05fr_0.95fr]">
-        <div className="hidden flex-col justify-between bg-primary p-10 text-primary-foreground md:flex">
+    <main className="flex min-h-screen w-full items-center justify-center bg-background px-4 py-6 sm:px-6 sm:py-10 md:-ml-64 md:px-8">
+      <section className="grid w-full max-w-5xl overflow-hidden rounded-2xl border border-border bg-card shadow-xl lg:min-h-[560px] lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="hidden flex-col justify-between bg-primary p-10 text-primary-foreground lg:flex">
           <div>
             <div className="mb-8 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-accent font-bold text-accent-foreground">L</div>
@@ -55,11 +55,11 @@ export default function LoginPage() {
           <p className="text-sm opacity-70">Secure workspace access for your team.</p>
         </div>
 
-        <div className="p-6 sm:p-10">
-          <div className="mb-8">
+        <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
+          <div className="mb-7">
             <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">Welcome back</p>
             <h1 className="text-3xl font-bold text-foreground">Sign in to your account</h1>
-            <p className="mt-2 leading-6 text-muted-foreground">Use your work email to continue to Leave Manager.</p>
+            <p className="mt-2 leading-6 text-muted-foreground">Use any name, email, or employee code to continue to Leave Manager.</p>
           </div>
 
           <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
@@ -81,7 +81,7 @@ export default function LoginPage() {
             <Button type="submit" className="mt-2 w-full">Sign in <ArrowRight data-icon="inline-end" /></Button>
           </form>
 
-          <p className="mt-6 text-center text-xs leading-5 text-muted-foreground">Demo access accepts any password with 4 or more characters for a registered work email.</p>
+          <p className="mt-6 text-center text-xs leading-5 text-muted-foreground">Demo mode is unrestricted. Enter any username and password to explore the workspace.</p>
         </div>
       </section>
     </main>
