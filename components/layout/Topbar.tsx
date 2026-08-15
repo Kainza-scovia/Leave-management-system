@@ -22,7 +22,7 @@ export function Topbar() {
   } = useAppContext();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-white shadow-sm">
+    <header className="sticky top-0 z-40 border-b border-border bg-card shadow-sm">
       <div className="flex h-16 items-center justify-between px-4 md:px-8 gap-4">
         {/* Center: Search Bar */}
         <div className="flex-1 max-w-md">

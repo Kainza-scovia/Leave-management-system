@@ -19,8 +19,8 @@ export function StatsCard({
   className,
 }: StatsCardProps) {
   return (
-    <Card className={`border-primary/10 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden ${className}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+    <Card className={`border-border bg-card shadow-sm transition-shadow duration-200 hover:shadow-md ${className}`}>
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity" />
       <CardHeader className="pb-3 relative z-10">
         <div className="flex items-center justify-between">
           <CardTitle className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">

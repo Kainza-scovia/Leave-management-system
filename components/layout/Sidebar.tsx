@@ -51,7 +51,7 @@ export function Sidebar() {
   const routes = ROLE_ROUTES[currentUser.role];
 
   return (
-    <aside className="hidden w-72 bg-primary md:flex md:flex-col h-screen fixed left-0 top-0 z-50 shadow-xl">
+    <aside className="fixed left-0 top-0 z-50 hidden h-screen w-64 bg-sidebar shadow-lg md:flex md:flex-col">
       {/* Sidebar Header - Logo Area */}
       <div className="px-6 py-8 border-b border-primary-foreground/10">
         <div className="flex items-center gap-3 mb-1">

@@ -45,7 +45,7 @@ export default function HRDashboard() {
       <div className="flex-1 flex flex-col">
         <Topbar />
         <main className="flex-1 overflow-auto">
-          <div className="p-4 md:p-6 space-y-6">
+          <div className="flex flex-col gap-6 p-4 md:p-6">
             <div>
               <h1 className="text-3xl font-bold">HR Administration</h1>
               <p className="text-muted-foreground">Manage leave policies and employee records</p>

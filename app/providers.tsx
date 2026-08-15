@@ -55,6 +55,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     const darkMode = localStorage.getItem('theme') === 'dark';
     setIsDarkMode(darkMode);
     document.documentElement.classList.toggle('dark', darkMode);
+    document.documentElement.classList.toggle('light', !darkMode);
 
     setIsLoading(false);
   }, []);

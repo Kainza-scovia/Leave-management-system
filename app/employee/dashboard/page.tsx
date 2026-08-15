@@ -50,10 +50,10 @@ export default function EmployeeDashboard() {
       <div className="flex-1 flex flex-col">
         <Topbar />
         <main className="flex-1 overflow-auto">
-          <div className="p-4 md:p-8 space-y-8">
+          <div className="flex flex-col gap-6 p-4 md:p-6">
             {/* Welcome Header */}
-            <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-6 border border-primary/10">
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+            <div className="rounded-xl border border-border bg-secondary p-5 shadow-sm">
+              <h1 className="mb-2 text-3xl font-bold text-primary md:text-4xl">
                 Welcome back, {currentUser?.name}! 👋
               </h1>
               <p className="text-muted-foreground text-lg">
